@@ -4,9 +4,12 @@ import { engine } from 'express-handlebars';
 import * as path from 'path';
 import { fileURLToPath } from "url";
 
+
 const app = express();
 const port = 3000;
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+app.use(express.static(path.join(__dirname, './src/public')));
 
 //http logger
 app.use(morgan('combined'));
