@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "format": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "node-sass -w src/scss/app.scss src/public/css/app.css",
     "start": "nodemon --inspect --experimental-modules --es-module-specifier-resolution=node index.js"
@@ -22,13 +23,24 @@
     "url": "https://github.com/tan-creator/my_blog/issues"
   },
   "homepage": "https://github.com/tan-creator/my_blog#readme",
+  "lint-staged": {
+    "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "express": "^4.18.1",
     "express-handlebars": "^6.0.6"
   },
   "devDependencies": {
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.1",
     "morgan": "^1.10.0",
     "node-sass": "^7.0.1",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "prettier": "^2.6.2"
   }
 }

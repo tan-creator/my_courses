@@ -4,7 +4,6 @@ export default class newsController {
         res.render('news');
     }
     static show(req, res) {
-        res.send('news details')
+        res.send('news details');
     }
 }
-

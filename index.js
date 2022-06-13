@@ -9,7 +9,7 @@ const app = express();
 const port = 3000;
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-app.use('/src', express.static(path.join(__dirname, 'public')));
+app.use('/src', express.static(path.join(__dirname, "public")));
 
 app.use(express.urlencoded({
   extended: true
