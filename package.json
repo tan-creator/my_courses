@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "node-sass -w src/scss/app.scss src/public/css/app.css",
-    "start": "nodemon --inspect index.js"
+    "start": "nodemon --inspect --experimental-modules --es-module-specifier-resolution=node index.js"
   },
   "repository": {
     "type": "git",
