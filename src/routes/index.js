@@ -1,8 +1,11 @@
 import router from './new';
 import routerSite from './site';
+import routerCourses from './courses';
 
 function route(app) {
     app.use('/news', router);
+    app.use('/courses', routerCourses);
+
     app.use('/', routerSite);
 
     //
